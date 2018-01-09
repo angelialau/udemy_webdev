@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Practice</title>
+</head>
+<body>
+	<h1>Register</h1>
+	<h2>Practising inputs in HTML</h2>
+	<form>
+		<p>
+			<label>First Name: <input type="text" name="firstName" required></label>
+			<label>Last Name: <input type="text" name="lastName" required> </label>	
+		</p>
+			
+		<p>
+			<label>Male <input type="radio" name="gender" value="male"></label>
+			<label>Female <input type="radio" name="gender" value="female"></label>
+			<label>Other <input type="radio" name="gender" value="other"></label>
+		</p>
+
+		<p>
+			<label>Email: <input type="email" name="email" required=""></label>
+			<label>Password: <input type="Password" name="Password" pattern=".{5,10}" required></label>
+		</p>
+
+		<p>
+			<label>Birthday: 
+				<select name="Month" title="Month">
+					<option value="Jan">Jan</option>
+					<option value="Feb">Feb</option>
+					<option value="Mar">Mar</option>
+				</select>
+				<select name="Day" title="Day">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+				</select>
+				<select name="Year" title="Year">
+					<option>2018</option>
+					<option>2017</option>
+					<option>2016</option>
+				</select>
+			</label>
+		</p>
+
+		<p>
+			<label>I agree to the terms and conditions <input type="checkbox" name="termsAndCondition"></label>
+		</p>
+		<input type="submit" name="submit">
+	</form>
+
+</body>
+</html>

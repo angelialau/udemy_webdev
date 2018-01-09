@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning bout Grid sys</title>
+  <link rel="stylesheet" type="text/css" href="../bootstrap4/css/bootstrap.css">
+  <style type="text/css">
+    .pink{
+      background: pink;
+      border: 1px solid gold;
+    }
+    .invPink{
+      background: gold;
+      border: 1px solid pink;
+    }
+
+    .centralised{
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="centralised">
+    <h2>Each grid system resides within a container</h2>
+    <h4>and each container contains rows</h4>
+    <h5>and each row has 12 spaces</h5>  
+  </div>
+  
+  <!-- bootstrap grid has to be inside a container -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 invPink centralised"> 2 8 2 w nested col</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 pink"> COL SM 2</div>
+      <div class="col-sm-8 pink"> COL SM 8</div>
+      <div class="col-sm-2 ">
+        <div class="row">
+          <div class="col-sm-6 pink"> COL SM 6</div>
+          <div class="col-sm-6 pink"> COL SM 6</div>
+        </div>
+      </div>
+    </div>  
+
+    <div class="row">
+      <div class="col-lg-12 invPink centralised"> 1 each </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1 pink"> COL LG 1</div>
+      <div class="col-lg-1 pink"> COL LG 1</div>
+      <div class="col-lg-1 pink"> COL LG 1</div>
+      <div class="col-lg-1 pink"> COL LG 1</div>
+      <div class="col-lg-1 pink"> COL LG 1</div>
+      <div class="col-lg-1 pink"> COL LG 1</div>
+      <div class="col-lg-1 pink"> COL LG 1</div>
+      <div class="col-lg-1 pink"> COL LG 1</div>
+      <div class="col-lg-1 pink"> COL LG 1</div>
+      <div class="col-lg-1 pink"> COL LG 1</div>
+      <div class="col-lg-1 pink"> COL LG 1</div>
+      <div class="col-lg-1 pink"> COL LG 1</div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 invPink centralised"> It will resize to md</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+      <div class="col-lg-1 col-md-2 pink"> COL LG 1</div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 invPink centralised"> lg3 md3 : note that since lg and md have the same number of col, u only need to specify for md, lg will inherit the same characteristics</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6 pink"> COL LG 3</div>
+      <div class="col-md-3 col-sm-6 pink"> COL LG 3</div>
+      <div class="col-md-3 col-sm-6 pink"> COL LG 3</div>
+      <div class="col-md-3 col-sm-6 pink"> COL LG 3</div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+\documentclass[11pt, a4paper]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb, amsmath}
+
+\title{Learning about JavaScript}
+\author{Angelia Lau}
+\date{\today}	
+\newcommand\tab[1][1cm]{\hspace*{#1}} %declaraction for \tab command
+
+\begin{document}
+\maketitle
+
+\section{Primitive Datatypes}
+\begin{enumerate}
+	\item Numbers
+	\item Strings
+	\item Boolean
+	\item Null (explicitly defined as nothing)
+	\item Undefined	(when a variable is declared but not initialised to a value yet)
+\end{enumerate}
+
+\subsection{Numbers}
+You can do math in the console! 
+
+\subsection{Strings }
+\begin{itemize}
+	\item Single quotes and double quotes are treated equally, as long as they are matched! 
+	\item Concatenation works 
+	\item Escape characters: \textbackslash " or \textbackslash '
+	\item ``A string''.length returns len %use '`' to write left quotation marks
+	\item ``The Beatles"[5] gives ``e"
+\end{itemize}
+
+\subsection{Quick Exercise}
+\begin{enumerate}
+	\item $100 \mathbin{\%} 3 = 1$
+	\item (``blah" + ``blah")[6] = ``a"
+	\item $``hello".length \mathbin{\%} ``hi\backslash".length = 5 \% 3 = 2$
+\end{enumerate}
+
+\section{Variables in JS}
+\begin{enumerate}
+	\item var name = whatever 
+	\item var names have to be camelCase
+\end{enumerate}
+
+
+\section{Methods in JS}
+\begin{enumerate}
+	\item clear() is an example method, it clears the console
+	\item Other built in functions: 
+	\begin{itemize}
+		\item \texttt{alert(``Hello there!")} shows a pop up 
+		\item \texttt{console.log(``hello from the console")} is like a LogCat message in AS
+		\item \texttt{var userName = prompt(``What is your name?");} \\ stores user input to the variable userName
+	\end{itemize}
+\end{enumerate}
+
+\section{Boolean logic in JS}
+
+Apart from the usual $>$, $>=$, $<$, $<=$, $\&\&$, $\mid\mid$, $!$ there are four more:
+
+\begin{center}
+\texttt{Assuming $x=5$,}
+
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	Operator & Name & Example & Result\\ \hline
+	== & Equal to & x==``5" & true\\ \hline
+	$\!$= & Not equal to & x$\!$=9 & true\\ \hline
+	=== & Equal value and type & x===``5" & false\\ \hline
+	$\!==$ & Not equal value and type & x$\!$==``5" & true\\ \hline
+\end{tabular}
+
+\emph{note that ``==" does type coercion, and converts different data types to the same one }
+
+Here are some interesting cases:
+
+\begin{tabular}{|c|c|}
+	\hline
+	Example & Result\\ \hline
+	true == ``1" & true\\ \hline
+	false == ``0" & true\\ \hline
+	null == undefined & true\\ \hline
+	NaN == NaN & false\\ \hline
+\end{tabular}
+
+\emph{note that NaN = Not A Number}
+\end{center}
+
+\subsection{Truthy and Falsey}
+Inherently \emph{falsey} values; false, 0, "", null, undefined, NaN. \\Everything else is \emph{truthy}.
+
+\subsection{Quick Exercise}
+\subsubsection{Question 1}
+	\begin{align*}
+		\text{var x} &= 10;\\
+		\text{var y} &= ``a";\\
+		(y === ``b") \mid\mid (x>=10) &= true
+	\end{align*}
+	
+\subsubsection{Question 2}
+	\begin{align*}
+		\text{var x} &= 3;\\
+		\text{var y} &= 8;\\
+		![(x==``3")\mid\mid(x===y)] \hspace{4pt}\&\& \hspace{4pt} ![(y!=8) \&\& (x<=y)]  &= false
+	\end{align*}
+	
+\subsubsection{Question 3}
+	\begin{align*}
+		\text{var str} &= ``";\\
+		\text{var msg} &= ``haha!";\\
+		\text{var isFunny} &= ``false";\\
+		!((str \mid\mid msg) \hspace{4pt}\&\&\hspace{4pt} isFunny) &= false
+	\end{align*}
+	
+	Both parts are true since they have values, invert with $!$ and so it becomes false.
+	
+\section{Loops}
+while and for loops are just like in java. Go rock em!
+
+\section{Functions}
+\subsection{Function Declaration}
+\subsubsection{Example syntax}
+\texttt{function capitalize(str)\{ \\
+\tab return str.charAt(0).toUpperCase() + str.slice(1); \\
+\}
+}
+\subsection{Function Expression}
+\subsubsection{Example syntax}
+\texttt{var capitalize=function(str)\{ \\
+\tab return str.charAt(0).toUpperCase() + str.slice(1); \\
+\}
+}
+
+However, like all variables, when the var value is changed to a normal value (ie a string or integer for example), the function expression will be lost. 
+
+
+\section{Scope}
+Every function has its own scope and the contents within the scope are not shared between functions. If variables within a function are not initialised with \texttt{var}, they will access global vars. Else, they will take on the initialised value. 
+\subsection{Example:}
+\texttt{
+  var phrase = "hi there$!$" \\
+  function doSomething()\{ \\
+  $\-$ var phrase = ``Goodbye$!$''; \\
+  $\-$ console.log(phrase); \\
+  \}
+}
+
+When you enter the function \texttt{doSomething()}, it returns \texttt{Goodbye!}. But globally, when you search for \texttt{phrase}, you will get \texttt{"hi there!"}.
+
+
+\section{Higher order functions!}
+Passing functions to other functions. 
+\subsection{Example}
+\begin{center}
+  \texttt{setInterval(<\emph{some function}>, <\emph{time interval in ms}>)}
+\end{center}
+So, an example would be \text{setInterval(singTwinkle, 1000)} which calls the \texttt{singTwinkle} method for 1000ms. Note that the function called doesn't have parenthesis. This is because the method isn't called by us, but called by the higher order method.
+
+\subsection{Anonymous functions}
+All of this can also be written as \texttt{setInterval(function()\{\emph{code here}$\dots$;\})}
+
+
+\end{document}  

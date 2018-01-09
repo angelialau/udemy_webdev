@@ -1,0 +1,49 @@
+/*elements*/
+li{
+
+}
+/*id*/
+#idname{
+
+}
+/*class*/
+.classname{
+
+}
+/*all elements*/
+*{
+
+}
+
+/*descendant selectors*/
+/*say u wanna select all anchor tags under li */
+li a{
+
+}
+/*example of nesting*/
+ul li a{
+
+}
+
+/*adjacent selector*/
+/*can be same level*/
+/*eg everything that is the same level as h4*/
+h4+ul{
+
+}
+
+/*attribute selector*/
+/*selecting by type*/
+a[href="http://google.com"]{
+
+}
+
+input[type="checkbox"]{
+
+}
+
+/*nth of type*/
+/*selects every nth item of a certain type*/
+ul:nth-of-type(3){
+	/*only the third ul will be affected*/
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First HTML Practice</title>
+</head>
+<body>
+
+	<!-- making a table -->
+	<h1>First Gen Pokemon Chart</h1>
+	<h2>Using tables, images and anchor tags</h2>
+	<table border="1">
+	<thead>
+		<tr>
+			<th>Image</th>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Evolves Into</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><img src="https://lh3.googleusercontent.com/-smI5p-zu0yg/VuESGAPnL6I/AAAAAAAAF48/lzadz7S87341SNyXoDcj5Py914ve89jfACCo/s290/Bulbasaur%2BPokemon%2BGo.png?refresh=900&resize_h=NaN&resize_w=NaN"></td>
+			<td>Bulbasaur</td>
+			<td>Grass/Poison</td>
+			<td><a href="https://cdn.bulbagarden.net/upload/thumb/7/73/002Ivysaur.png/250px-002Ivysaur.png">Ivysaur</a></td>
+		</tr>
+
+		<tr>
+			<td><img src="https://cdn.bulbagarden.net/upload/thumb/7/73/004Charmander.png/250px-004Charmander.png"></td>
+			<td>Charmander</td>
+			<td>Fire</td>
+			<td><a href="https://cdn.bulbagarden.net/upload/thumb/7/73/002Ivysaur.png/250px-002Ivysaur.png">Charmeleon</a></td>
+		</tr>
+
+		<tr>
+			<td><img src="https://cdn.bulbagarden.net/upload/thumb/3/39/007Squirtle.png/250px-007Squirtle.png"></td>
+			<td>Squirtle</td>
+			<td>Water</td>
+			<td><a href="https://cdn.bulbagarden.net/upload/thumb/7/73/002Ivysaur.png/250px-002Ivysaur.png">Wartotle</a></td>
+		</tr>
+	</tbody>
+	</table>
+
+
+	<h1>Forms</h1>
+	<form>
+		<!-- there are two ways to add tagged labels to inputs-->
+		<label for="username">Username:</label>
+		<input id="username" type="text" name="username" placeholder="Email" required> 
+		<label>Email: <input type="email" name="email" placeholder="email" required></label>
+		<!-- name is like a query param -->
+		<label><input type="password" name="password" placeholder="password" required></label>
+		<label for "rmbme">Rmb me</label>
+		<input id="radiochoice" type="radio" name="choice" value="yes">
+		<label for "forgetme">Don't rmb me</label>
+		<input id="forgetme" type="radio" name="choice" value="no">
+		<input type="submit" name="submit">
+	</form>
+
+	<form>
+		<label>Mood?
+			<select name="satisfied">
+				<option value="happy">:)</option>
+				<option value="neutral">:|</option>
+				<option value="sad">:(</option>
+			</select>
+		</label>
+		<p>
+		<label>
+			Why are you feeling this way?
+			<p><textarea name="paragraph" rows="10" cols="50"></textarea></p>	
+		</label>
+		</p>
+	</form>
+
+</body>
+</html>

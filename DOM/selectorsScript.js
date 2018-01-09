@@ -1,0 +1,10 @@
+var ans = document.getElementById('first');
+console.log(ans);
+var ans = document.getElementsByClassName('special')[0];
+console.log(ans);
+var ans = document.querySelector('p');
+console.log(ans);
+var ans = document.querySelector('#first');
+console.log(ans);
+var ans = document.querySelector('.special');
+console.log(ans);

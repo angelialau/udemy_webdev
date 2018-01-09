@@ -1,0 +1,46 @@
+DOM
+document obj model = interface between js and html+css
+
+common methods
+- document.getElementsById("idname")
+- document.getElementsByClassName("classname")
+- document.getElementsByTagName("tagname") //eg p or a etc 
+- document.querySelector("#idname/h1/.classname etc") //only returns first element that match 
+- document.querySelectorAl("li") //gives me all 'li's, can still use for selectors which only have one match 
+
+//style tag 
+var h1 = document.querySelectorAll("h1");
+h1.style.color = "blue";
+alternatively...define a class in css then toggle  it on or off using js
+- h1.classList.add("someclass");
+- h1.classList.remove("someclass");
+- h1.classList.toggle("someclass"); current = !current state
+
+
+//separation of concerns:
+html - structure
+js - behaviour, supposed to turn on or off behaviours like styles but not the actual styling  
+css - presentation 
+minimise overlap!
+
+//textContent 
+returns string of all the text in a given element 
+eg <p> this is an <strong> awesome </strong> para </p>
+- textcontent, treats whatever u give as strictly string
+var tag = document.querySelector("p");
+tag.textContent //"this is an awesome para"
+- innerhtml, treats whatever u give like html
+tag.innerHTML //this is an <strong> awesome </strong> para 
+
+- sets content 
+tag.textContent = "blah blah blah"; 
+tag.getAttribute("src"); //returns link 
+tag.setAttribute("src", "http://whatever.com"); //(attribute name, link or data)
+
+- Events
+select an element (button etc) -> add an event listener (keypress, hover, click etc)
+method: addEventListener(type, functionThatRunsAfterEvent)
+type 
+
+
+
